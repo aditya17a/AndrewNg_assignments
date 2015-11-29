@@ -20,13 +20,10 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
-
+m = length(idx);
+for i = 1:m
+    [~,idx(i)] = min(pdist2(X(i,:),centroids));
+end
 % =============================================================
 
 end
