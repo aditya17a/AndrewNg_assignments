@@ -26,7 +26,17 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+% NON-VECTORIZED IMPLEMENTATION
+% for i =1:size(X,2)
+%     mu(1,i) = mean(X(:,i));
+%     sigma(1,i) = std(X(:,i));
+%     X_norm(:,i) = (X(:,i) - mu(i))/sigma(i);
+% end
 
+% VECTORIZED IMPLEMENTATION
+mu = mean(X);
+sigma = std(X);
+X_norm = (X-repmat(mu,size(X,1),1))./repmat(sigma,size(X,1),1);
 
 
 
