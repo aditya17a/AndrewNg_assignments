@@ -30,8 +30,8 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
+predictions = sigmoid(X*all_theta'); % X is mX(n+1), theta is KX(n+1)
+[~,p] = max(predictions,[],2);
 
 
 
